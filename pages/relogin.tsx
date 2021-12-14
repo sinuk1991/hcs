@@ -4,15 +4,12 @@ import UIkit from 'uikit';
 import "uikit/dist/css/uikit.min.css";
 import "uikit/dist/js/uikit.min.js"; 
 import Icons from 'uikit/dist/js/uikit-icons'
-import usePageTitle from './api/usePageTitle'
+import UsePageTitle from './api/usePageTitle'
 import { stringify } from "querystring";
 
-export default function login() {
-    usePageTitle('로그인 페이지')
-    const [text, setText] = useState('');
-    const onChange = (e) => {
-        setText(e.target.value);
-      };
+export default function Relogin() {
+    UsePageTitle('로그인 페이지')
+
     useEffect(() => {
         UIkit.use(Icons)
     })

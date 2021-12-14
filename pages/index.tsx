@@ -13,11 +13,10 @@ import {
   NavbarSticky,
   Section,
 } from 'uikit-react';
-import usePageTitle from './api/usePageTitle'
+import UsePageTitle from './api/usePageTitle'
 
 export default function Home() {
-  usePageTitle('1')
-  
+    UsePageTitle('1')
   return (
     <div className="container">
       test

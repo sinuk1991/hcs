@@ -11,9 +11,9 @@ const useTitle = (initialTitle) => {
   return setTitle;
 }
 
-function usePageTitle(pageTitle) {
+function UsePageTitle(pageTitle) {
   const titleUpdater = useTitle("Loading...");
   setTimeout(() => titleUpdater(pageTitle), 500);
 }
 
-export default usePageTitle;
+export default UsePageTitle;

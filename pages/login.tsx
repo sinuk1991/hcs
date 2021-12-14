@@ -4,10 +4,10 @@ import UIkit from 'uikit';
 import "uikit/dist/css/uikit.min.css";
 import "uikit/dist/js/uikit.min.js"; 
 import Icons from 'uikit/dist/js/uikit-icons'
-import usePageTitle from './api/usePageTitle'
+import UsePageTitle from './api/usePageTitle'
 
-export default function login() {
-    usePageTitle('로그인 페이지')
+export default function Login() {
+    UsePageTitle('로그인 페이지')
     const [text, setText] = useState('');
     const onChange = (e) => {
         setText(e.target.value);
