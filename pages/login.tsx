@@ -69,6 +69,10 @@ export default function login() {
                     </div>
                 </form>
             </div>
+            <style jsx>{`
+                .uk-input[type=text]{padding-left:20px}
+                .uk-form-icon-flip{right:5;right:5px;}
+            `}</style>
         </div>
     );
 }

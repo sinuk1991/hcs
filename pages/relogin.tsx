@@ -5,6 +5,7 @@ import "uikit/dist/css/uikit.min.css";
 import "uikit/dist/js/uikit.min.js"; 
 import Icons from 'uikit/dist/js/uikit-icons'
 import usePageTitle from './api/usePageTitle'
+import { stringify } from "querystring";
 
 export default function login() {
     usePageTitle('로그인 페이지')
@@ -16,15 +17,9 @@ export default function login() {
         UIkit.use(Icons)
     })
 
-    const inputRef = useRef(null);
-
-    const handleCheck = (e) => {
-        if(window.confirm("시스템 저장에 동의하십니까?\n저장되는 항목: 이름, 학교명, 진단항목, 진단일") == false) {
-            e.target.checked=false;
-            inputRef.current.disable=true;
-        } else {
-            e.target.checked=true;
-            inputRef.current.disabled=false;
+    const inputPasswd = (event) => {
+        if(event.keyCode <= 48 || event.keyCode >= 57) {
+            return false;
         }
     }
 
@@ -40,35 +35,26 @@ export default function login() {
                     <fieldset className="uk-fieldset">
                         <div className="uk-margin-small">
                             <div className="uk-inline uk-width-1-1">
-                                <span className="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: location"></span>
-                                <input className="uk-input uk-border-pill" type="text" required placeholder="학교명"/>
+                                <span className="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: lock"></span>
+                                <input className="uk-input uk-border-pill" onKeyDown={(inputPasswd)} type="number" required placeholder="비밀번호"/>
                             </div>
-                        </div>
-                        <div className="uk-margin-small">
-                            <div className="uk-inline uk-width-1-1">
-                                <span className="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: user"></span>
-                                <input className="uk-input uk-border-pill" type="text" required placeholder="학생성명"/>
-                            </div>
-                        </div>
-                        <div className="uk-margin-small">
-                            <label>
-                                <input className="uk-checkbox" type="checkbox" onChange={(handleCheck)}/>
-                                &nbsp;시스템 이용동의
-                            </label>
                         </div>
                         <div className="uk-margin-bottom">
-                            <button disabled className="uk-button uk-button-primary uk-border-pill uk-width-1-1" ref={inputRef}>
+                            <button className="uk-button uk-button-primary uk-border-pill uk-width-1-1">
                                 <span data-uk-icon="icon: sign-in"></span>&nbsp;
                                 로그인
                             </button>
                         </div>
                     </fieldset>
                     <div className="uk-text-left">
-                        <span className="hcs-app-infoicon" data-uk-icon="icon: info"></span>시스템에 저장되는 항목<br/>
-                        <span className="hcs-app-infotip">이름, 학교명, 진단항목, 진단일</span>
+                        <span className="hcs-app-infoicon" data-uk-icon="icon: question"></span>비밀번호 분실시 담당선생님께 문의하세요.
                     </div>
                 </form>
             </div>
+            <style jsx>{`
+                .uk-input[type=number]{padding-left:20px;-webkit-text-security: disc;}
+                .uk-form-icon-flip{right:5;right:5px;}
+            `}</style>
         </div>
     );
 }
