@@ -31,7 +31,7 @@ export default function Relogin() {
                     </article>
                     <fieldset className="uk-fieldset">
                         <div className="uk-margin-bottom uk-text-center">
-                            '서울홍길동초등학교 홍길동' 님의<br/>비밀번호를 입력하세요.
+                            서울홍길동초등학교 홍길동님의<br/>비밀번호를 입력하세요.
                         </div>
                         <div className="uk-margin-bottom">
                             <div className="uk-inline uk-width-1-1">
