@@ -4,7 +4,7 @@ import UIkit from 'uikit';
 import "uikit/dist/css/uikit.min.css";
 import "uikit/dist/js/uikit.min.js"; 
 import Icons from 'uikit/dist/js/uikit-icons'
-import UsePageTitle from './api/usePageTitle'
+import UsePageTitle from '../components/usePageTitle'
 import { stringify } from "querystring";
 
 export default function Relogin() {
@@ -30,7 +30,10 @@ export default function Relogin() {
                         <p className="uk-article-meta hcs-app-subtitle">Health condition self-check</p>
                     </article>
                     <fieldset className="uk-fieldset">
-                        <div className="uk-margin-small">
+                        <div className="uk-margin-bottom uk-text-center">
+                            '서울홍길동초등학교 홍길동' 님의<br/>비밀번호를 입력하세요.
+                        </div>
+                        <div className="uk-margin-bottom">
                             <div className="uk-inline uk-width-1-1">
                                 <span className="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: lock"></span>
                                 <input className="uk-input uk-border-pill" onKeyDown={(inputPasswd)} type="number" required placeholder="비밀번호"/>

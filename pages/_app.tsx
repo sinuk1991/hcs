@@ -10,14 +10,17 @@ function App({ Component, pageProps }: AppProps) {
     </Head>
       <Component {...pageProps} />
     <style jsx global>{`
+            *{border-box:box-sizing}
       html,body{margin:0;padding:0;width:100%;height:100%;overflow:hidden;user-select:none}
       #__next {
         width:100%;
         height:100%;
+        background:rgb(238,238,238)
       }
       .root{width:100%;height:100%;overflow:auto !important}
       .hcs-app-logo{width:60px;height:auto;margin-bottom:10px;margin-left:-10px}
       .hcs-app-header{margin-bottom:20px}
+      .hcs-app-header.logon{padding:10px 0px}
       .hcs-app-title{margin:0;padding:0;}
       .hcs-app-subtitle{margin:0;padding:0}
       .hcs-app-infoicon{margin-right:5px}
