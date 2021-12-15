@@ -4,7 +4,7 @@ import UIkit from 'uikit';
 import "uikit/dist/css/uikit.min.css";
 import "uikit/dist/js/uikit.min.js"; 
 import Icons from 'uikit/dist/js/uikit-icons'
-import UsePageTitle from '../components/usePageTitle'
+import UsePageTitle from '../../components/usePageTitle'
 import { stringify } from "querystring";
 
 export default function Main() {
@@ -31,24 +31,22 @@ export default function Main() {
                 </header>
                 <div className="hcs-app-body">
                     <div className="hcs-body-item">
-                        <div className="hcs-news-list">
-                            <h1 className="hcs-body-item-title">사용자정보</h1>
-                            <ul className="hcs-userinfo">
-                                <li>
-                                    <h4>학교명</h4>
-                                    <span>서울풍성초등학교</span>
-                                </li>
-                                <li className="hcs-userinfo-line">
-                                    <h4>성명</h4>
-                                    <div className="uk-clearfix"></div>
-                                    <span>홍길동님</span>
-                                </li>
-                                <li>
-                                    <h4>상태</h4>
-                                    <span>비인증</span>
-                                </li>
-                            </ul>
-                        </div>
+                        <h1 className="hcs-body-item-title">사용자정보</h1>
+                        <ul className="hcs-userinfo">
+                            <li>
+                                <h4>학교명</h4>
+                                <span>서울풍성초등학교</span>
+                            </li>
+                            <li className="hcs-userinfo-line">
+                                <h4>성명</h4>
+                                <div className="uk-clearfix"></div>
+                                <span>홍길동님</span>
+                            </li>
+                            <li>
+                                <h4>상태</h4>
+                                <span>비인증</span>
+                            </li>
+                        </ul>
                     </div>
                     <div className="hcs-body-item">
                         <h1 className="hcs-body-item-title">자가진단상태</h1>
@@ -64,22 +62,37 @@ export default function Main() {
                     </div>
                     <div className="hcs-body-item">
                         <div className="hcs-news-list">
-                            <h1 className="hcs-body-item-title">알려드립니다.</h1>
+                            <h1 className="hcs-body-item-title">전달사항</h1>
                             <ul>
-                                <li>새로운 소식이 없습니다.</li>
+                                <li>
+                                    <span className="news-item-title">새로운 자가진단 사용 안내</span>
+                                    <span className="news-item-additional">
+                                        <span className="uk-badge news-item-additional-status notread">읽지않음</span> 
+                                        <span className="news-item-additional-regdate">2021-03-01</span>
+                                    </span>
+                                </li>
+                                <li>
+                                    <span className="news-item-title">등교 안내</span>
+                                    <span className="news-item-additional">
+                                        <span className="uk-badge news-item-additional-status reading">읽음</span> 
+                                        <span className="news-item-additional-regdate">2021-01-01</span>
+                                    </span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div className="menu">
-                    <ul>
+                <div className="uk-container gnb_menu">
+                    <ul className="gnb_menu_body">
+                        <li><a href="javascript:;">처음화면</a></li>
+                        <li><a href="javascript:;">코로나확진자현황</a></li>
                         <li><a href="javascript:;">비밀번호변경</a></li>
                         <li><a href="javascript:;">로그아웃</a></li>
                     </ul>
                 </div>
             </div>
             <style jsx>{`
-            .logon{width:100%;height:100%;overflow:auto;background: rgb(238,238,238);
+            .logon{position:relative;width:100%;height:100%;overflow:auto;background: rgb(238,238,238);
                 background: linear-gradient(0deg, rgba(238,238,238,1) 50vh, rgba(0,172,193,1) 90vh);}
             .hcs-app-header{width:100%;height:auto !important;overflow:hidden;}
             .hcs-app-gnb{width:100%;padding:10px 0px;height:auto !important;overflow:hidden}
@@ -102,6 +115,17 @@ export default function Main() {
             .hcs-state-userinfo{float:left;margin-left:15px;line-height:200%;font-size:16pt;padding:10px 0px;color:#fff;letter-spacing:0.02em}
             .hcs-normal{background:#039be5}
             .hcs-warning{background:#ef5350}
+            .hcs-wait{background:#f5f5f5}
+            .gnb_menu{left:0;width:100%;height:calc(100% - 60px);margin-top:60px;top:0;top:0px;position:absolute;z-index:9999;background:rgba(0,0,0,.5);display:none}
+            .gnb_menu_body{margin:0 auto;float:right;width:220px;height:100%;background:#fff;}
+            .hcs-news-list ul{margin:0;padding:0;list-style:none}
+            .hcs-news-list ul li{padding:6px 2px;border-bottom:1px solid #eee}
+            .hcs-news-list ul li:last-child{border-bottom:0px}
+            .hcs-news-list ul li span.news-item-title, .hcs-news-list ul li span.news-item-additional{display:block}
+            .news-item-additional-status{padding:2px 10px;}
+            .notread{background:#ab47bc}
+            .reading{background:#42a5f5}
+            .news-item-additional-regdate{display:inline-block;margin-left:10px;font-size:.8em;}
             .hcs-wait{background:#f5f5f5}
             `}</style>
         </div>
