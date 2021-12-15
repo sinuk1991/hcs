@@ -1,4 +1,4 @@
-# Health Conditional-check & Origanization Notify System
+# Health Conditional-check & Organization Notify System
 ## Use language
 Next.js, ReactJS
 
