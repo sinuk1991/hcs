@@ -3,4 +3,4 @@
 Next.js, ReactJS
 
 ## This is what is it?
-Health conditional-check system & Origanization notify system.
+Health conditional-check system & Oraganization notify system.
