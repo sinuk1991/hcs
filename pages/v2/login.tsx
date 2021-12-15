@@ -4,7 +4,7 @@ import UIkit from 'uikit';
 import "uikit/dist/css/uikit.min.css";
 import "uikit/dist/js/uikit.min.js"; 
 import Icons from 'uikit/dist/js/uikit-icons'
-import UsePageTitle from '../components/usePageTitle'
+import UsePageTitle from '../../components/usePageTitle'
 
 export default function Login() {
     UsePageTitle('로그인 페이지')
