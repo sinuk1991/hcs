@@ -25,7 +25,7 @@ export default function Main() {
                     <div className="hcs-app-title">
                         <span className="hcs-app-title-body">
                             안녕하세요. 반갑습니다.<br/>
-                            <span className="hcs-app-healthcheck-state">자가진단이 완료되었습니다.</span>
+                            자가진단문항을 꼼꼼하게 답해주세요.
                         </span>
                     </div>
                 </header>
@@ -49,37 +49,56 @@ export default function Main() {
                         </ul>
                     </div>
                     <div className="hcs-body-item">
-                        <h1 className="hcs-body-item-title">자가진단상태</h1>
-                        <a href="/v2/survey" className="hcs-state-list hcs-normal">
-                            <h4 className="hcs-state">
-                                <span className="hcs-state-body">
-                                    <span className="uk-margin-small-flip" uk-icon="check"></span>
-                                    <span className="hcs-state-text">정상</span>
-                                </span>
-                            </h4>
-                            <span className="hcs-state-userinfo">홍길동님 (00:00)</span>
-                        </a>
-                    </div>
-                    <div className="hcs-body-item">
-                        <div className="hcs-news-list">
-                            <h1 className="hcs-body-item-title">전달사항</h1>
-                            <ul>
-                                <li>
-                                    <span className="news-item-title">새로운 자가진단 사용 안내</span>
-                                    <span className="news-item-additional">
-                                        <span className="uk-badge news-item-additional-status notread">읽지않음</span> 
-                                        <span className="news-item-additional-regdate">2021-03-01</span>
-                                    </span>
-                                </li>
-                                <li>
-                                    <span className="news-item-title">등교 안내</span>
-                                    <span className="news-item-additional">
-                                        <span className="uk-badge news-item-additional-status reading">읽음</span> 
-                                        <span className="news-item-additional-regdate">2021-01-01</span>
-                                    </span>
-                                </li>
-                            </ul>
+                        <h1 className="hcs-body-item-title">자가진단문항</h1>
+                        <form className="uk-form-stacked">
+                        <div>
+                            <p>
+                                1. 학생 본인이 코로나-19가 의심되는 아래의 임상증상<sup>*</sup>이 있나요?<br/>
+                                <sup>*</sup>(주요임상증상) 발열(37.5℃이상), 기침, 호흡곤란, 오한, 근육통, 두통, 인후통, 후각/미각소실<br/>
+                                ※ 단 학교에서 선별진료소 검사결과(음성)을 확인 후 등교를 허용한 경우, 또는 선천성/만성질환(천식 등)으로 인한 증상인 경우 &#39;아니오&#39;를 선택하세요.
+                            </p>
+                            <div className="uk-margin uk-width-1-1 uk-align-center">
+                                <label><input className="uk-radio" type="radio" name="q1" value="0" /> 아니오</label>
+                                <label><input className="uk-radio" type="radio" name="q1" value="1" /> 예</label>
+                            </div>
                         </div>
+                        <div>
+                            <p>
+                                2. 학생 본인 또는 동거인이 코로나-19 진단검사를 받고 그 결과를 기다리고 있나요?<br/>
+                                ※ 단 확진자와의 접촉 가능성 등으로 보건당국의 권고에 의해 검사한 것이 아닌 경우, <sup>*</sup>아니오를 선택하세요.<br/>
+                                직업특성에 의한 정기검사, 대회참여 등 선제적 예방 목적
+                            </p>
+                            <div className="uk-margin uk-width-1-1 uk-align-center">
+                                <label><input className="uk-radio" type="radio" name="q2" value="0" /> 아니오</label>
+                                <label><input className="uk-radio" type="radio" name="q2" value="1" /> 예</label>
+                            </div>
+                        </div>
+                        <div>
+                            <p>
+                                3. 학생 본인 또는 동거인이 방역당국에 의해 현재 자가격리가 이루어지고 있나요?<br/>
+                                ※ 단 동거인이 자가격리 중인 경우에도 다음에 해당하는 경우는 &#39;아니오&#39;를 선택하세요.<br/>
+                                ① 학생이 예방접종을 완료(2차접종 완료 후 2주 경과)한 경우 ② PCR 음성 통지를 받은 후 48시간이 지나지 않은 경우 <br/>③ 격리 통지를 받은 &#39;즉시&#39; 자가격리된 동거인과 접촉이 없었던 경우
+                            </p>
+                            <div className="uk-margin uk-width-1-1 uk-align-center">
+                                <label><input className="uk-radio" type="radio" name="q3" value="0" /> 아니오</label>
+                                <label><input className="uk-radio" type="radio" name="q3" value="1" /> 예</label>
+                            </div>
+                        </div>
+                        <div className="uk-line">
+                            <p>
+                                4. 학생의 동거인 중 확진자가 있나요?<br/>
+                                ※ 단 학생이 방역당국 지침에 따라 수동감시 대상이 된 경우 &#39;아니오&#39;를 선택하세요.<br/>
+                                * 수동감시 요건: PCR검사 음성, 밀접접촉 당시 접종 완료, 무 증상 등 모두 충족 &lt;방역당국 접종 완료자 지침&gt;
+                            </p>
+                            <div className="uk-margin uk-width-1-1 uk-align-center">
+                                <label><input className="uk-radio" type="radio" name="q4" value="0" /> 아니오</label>
+                                <label><input className="uk-radio" type="radio" name="q4" value="1" /> 예</label>
+                            </div>
+                        </div>
+                        <div className="uk-width-1-1">
+                            <button className="uk-width-1-1 uk-button uk-button-default">제출</button>
+                        </div>
+                        </form>
                     </div>
                 </div>
                 <div className="uk-container gnb_menu">

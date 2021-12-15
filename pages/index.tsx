@@ -1,25 +1,10 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import { 
-  Container,
-  Icon,
-  Link,
-  List,
-  ListItem,
-  Offcanvas,
-  OffcanvasContainer,
-  Navbar,
-  NavbarContainer,
-  NavbarSticky,
-  Section,
-} from 'uikit-react';
-import UsePageTitle from '../components/usePageTitle'
+import * as React from 'react';
+import Router from "next/router";
+import Login from './v2/login'
 
-export default function Home() {
-    UsePageTitle('1')
+export default function Home(){
+  
   return (
-    <div className="container">
-      test
-    </div>
-  );
+  Router.push("/v2/login")
+    )
 }
